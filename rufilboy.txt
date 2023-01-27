@@ -39,3 +39,22 @@ This allows you to pick and choose which commits you want to apply, rather than 
 Cherry-picking is useful when you want to merge only certain commits from one branch to another, 
 for example when you want to apply a fix from a development branch to a production branch, 
 or when you want to apply commits from a feature branch to multiple release branches.
+
+
+
+============================================================================================================
+
+The main difference between git rebase and git cherry-pick is the scope of the changes they apply:
+
+- git rebase takes the commits from one branch and reapplies them on top of another branch. This effectively integrates all the commits from the rebased branch into the other branch, and can result in a new linear commit history.
+
+- git cherry-pick, on the other hand, allows you to select specific commits from one branch and apply them to another branch. This allows you to pick and choose which commits you want to apply, rather than applying all of the commits from a branch.
+
+Another difference is that git cherry-pick applies only one commit at a time, while git rebase applies multiple commits.
+
+When to use each one of them:
+
+- git rebase is useful when you want to integrate all the commits from a branch into another branch, and you want to preserve a linear commit history.
+
+- git cherry-pick is useful when you want to apply specific commits from one branch to another branch, without merging the entire branch. This can be useful when you want to apply only certain commits from a branch, for example when you want to apply a fix from a development branch to a production branch, or when you want to apply commits from a feature branch to multiple release branches.
+
