@@ -1,0 +1,60 @@
+1a. What is git rebase?
+
+Git rebase is a command that allows you to take the changes from one branch and reapply them on top of 
+another branch. This can be useful for integrating changes from one branch into another, or for cleaning 
+up a messy commit history.
+
+When you use the git rebase command, Git will first find the common ancestor of the two branches you're 
+rebasing. It will then apply the changes from the branch you're rebasing onto, one-by-one, on top of the 
+other branch. This will result in a new linear commit history, in which the changes from the rebased branch 
+appear as if they were made after the changes from the other branch.
+
+1b. When & Why we use rebase:
+
+Rebasing is typically used when you have made local commits on a branch that you want to integrate with the upstream branch, but you don't want to merge them. Rebasing allows you to take the commits that you've made on your local branch and apply them on top of the upstream branch, effectively incorporating your changes into the upstream branch while preserving a linear commit history.
+
+Some of the common use cases of rebasing include:
+
+=> Updating a local branch with the latest changes from the upstream branch: This is done by running git rebase upstream-branch on your local branch.
+
+=> Cleaning up a messy commit history: By using git rebase -i you can interactively edit your commit history, squashing commits, reordering them, and more.
+
+=> Synchronizing a fork with the upstream repository: Rebasing allows you to incorporate the changes from the upstream repository into your fork without creating a merge commit.
+
+=> Making your local commits look like they were made after the upstream commits: By doing so, it will make it easy for others to review your changes and merge them into the upstream branch.
+
+
+What is git cherry-picking?
+
+Git cherry-picking is a command that allows you to select specific commits from one branch and apply them to 
+another branch. This can be useful when you want to apply only certain commits from a branch, 
+rather than merging the entire branch.
+
+When & why we use cherry-picking:
+
+We use the git cherry-pick command, you specify the commit hash of the commit you want to apply, 
+and Git will apply that commit as a new commit on the current branch. 
+This allows you to pick and choose which commits you want to apply, rather than applying all of the commits from a branch.
+
+Cherry-picking is useful when you want to merge only certain commits from one branch to another, 
+for example when you want to apply a fix from a development branch to a production branch, 
+or when you want to apply commits from a feature branch to multiple release branches.
+
+
+
+============================================================================================================
+
+The main difference between git rebase and git cherry-pick is the scope of the changes they apply:
+
+- git rebase takes the commits from one branch and reapplies them on top of another branch. This effectively integrates all the commits from the rebased branch into the other branch, and can result in a new linear commit history.
+
+- git cherry-pick, on the other hand, allows you to select specific commits from one branch and apply them to another branch. This allows you to pick and choose which commits you want to apply, rather than applying all of the commits from a branch.
+
+Another difference is that git cherry-pick applies only one commit at a time, while git rebase applies multiple commits.
+
+When to use each one of them:
+
+- git rebase is useful when you want to integrate all the commits from a branch into another branch, and you want to preserve a linear commit history.
+
+- git cherry-pick is useful when you want to apply specific commits from one branch to another branch, without merging the entire branch. This can be useful when you want to apply only certain commits from a branch, for example when you want to apply a fix from a development branch to a production branch, or when you want to apply commits from a feature branch to multiple release branches.
+
