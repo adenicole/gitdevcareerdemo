@@ -26,5 +26,16 @@ Some of the common use cases of rebasing include:
 
 What is git cherry-picking?
 
+Git cherry-picking is a command that allows you to select specific commits from one branch and apply them to 
+another branch. This can be useful when you want to apply only certain commits from a branch, 
+rather than merging the entire branch.
 
-When or why we use cherry-picking:
+When & why we use cherry-picking:
+
+We use the git cherry-pick command, you specify the commit hash of the commit you want to apply, 
+and Git will apply that commit as a new commit on the current branch. 
+This allows you to pick and choose which commits you want to apply, rather than applying all of the commits from a branch.
+
+Cherry-picking is useful when you want to merge only certain commits from one branch to another, 
+for example when you want to apply a fix from a development branch to a production branch, 
+or when you want to apply commits from a feature branch to multiple release branches.
